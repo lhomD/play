@@ -1,7 +1,9 @@
-export { checkImgStatus, XHRequest, runTime };
+export { checkImgStatus, XHRequest, runTime, checkScreenSize };
 
 const baseUrl = "https://api.themoviedb.org/3/"; //Movie DB Base Url
 const imageUrl = "https://image.tmdb.org/t/p/w1280"; //Url to the image
+/* Media Query */
+const mediaQuery = window.matchMedia("(max-width: 1023px)");
 
 /* Function to check if image exist */
 function checkImgStatus(arg) {
@@ -27,3 +29,13 @@ function runTime(time) {
   let minutes = Math.round((time / 60 - hour) * 60);
   return hour + "h " + minutes + "m";
 } //End runTim
+
+/* Function to get screen size */
+function checkScreenSize() {
+  // Check if the media query is true
+  if (mediaQuery.matches) {
+    return true;
+  } else {
+    return false;
+  }
+} //End checkScreenSize

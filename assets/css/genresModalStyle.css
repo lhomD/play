@@ -123,7 +123,7 @@
     margin-top: 0rem;
     overflow: scroll;
     height: 100vh;
-    padding: 4rem 0;
+    padding: 10rem 0;
   }
   .genres_container_cards {
     flex-direction: column;

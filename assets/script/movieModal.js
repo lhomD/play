@@ -111,8 +111,8 @@ async function publushMovie() {
 /* Check genres and return name */
 function getGenres(genresArr) {
   let genres = "";
-  if (genresArr.length < 2) {
-    genres += genresArr[i].name + (i === genresArr.length - 1 ? "" : ", ");
+  if (genresArr.length <= 1) {
+    genres += genresArr[0].name;
     return genres;
   } else {
     for (let i = 0; i < 2; i++) {
@@ -123,22 +123,29 @@ function getGenres(genresArr) {
 } //End getGenres
 /* Directed by. Find */
 function directedBy() {
+  let directorName;
   if (cast.crew) {
-    return cast.crew.find(
+    directorName = cast.crew.find(
       (person) => person.known_for_department === "Directing"
-    ).name;
+    );
+    if (!directorName) {
+      return "";
+    } else {
+      return directorName.name;
+    }
   }
 } // End directedBy
 /* Find img of director */
 function directedByImg() {
+  let profileImage;
   if (cast.crew) {
-    let image = cast.crew.find(
+    profileImage = cast.crew.find(
       (person) => person.known_for_department === "Directing"
-    ).profile_path;
-    if (image) {
-      return "https://image.tmdb.org/t/p/w300" + image;
-    } else {
+    );
+    if (!profileImage) {
       return "https://placehold.jp/3d4070/ffffff/300x300.png?text=Image%20Missing";
+    } else {
+      return "https://image.tmdb.org/t/p/w300" + profileImage.profile_path;
     }
   }
 } // End directedByImg

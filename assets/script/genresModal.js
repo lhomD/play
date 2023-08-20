@@ -75,7 +75,6 @@ function showGenres() {
 /* Publishing cards to the modal */
 async function publishGenres() {
   genresDB = await genresData();
-  console.log(genresDB);
   genresContainer = document.querySelector(".genres_container_cards");
   genresDB.forEach((genre) => {
     let singleGenre = document.createElement("a");

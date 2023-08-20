@@ -78,7 +78,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 3.5rem;
+  height: 3.3rem;
 }
 .trending_container_content_info_score {
   font-size: 1.2rem;
@@ -312,7 +312,7 @@
     gap: 0;
   }
   .trending_container_content_info_titel-name {
-    height: 2.2rem;
+    height: 2.5rem;
   }
   .trending_container_content_info-num {
     top: auto;
