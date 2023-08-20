@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <script src="https://kit.fontawesome.com/2a11852330.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="./assets/script/index.js"></script>
+  <title>Play | Home</title>
+</head>
+
+<body>
+  <div id="modal" class="modal"></div>
+  <div class="wrapper">
+    <header class="header">
+      <a href="/">
+        <img src="./assets/images/logotype.png" alt="Logo of play">
+      </a>
+      <form id="searchForm" class="header_container_search">
+        <label for="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <input type="search" name="search" id="searchDesktop" placeholder="Search">
+      </form>
+      <nav role="menu" class="header_container_links">
+        <a href="/" class="active">Home</a>
+        <a href="./genres">Genres
+          <i class="fa-solid fa-chevron-down"></i>
+          <i class="fa-solid fa-chevron-up"></i>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <div class="hero" role="banner">
+        <!-- Next hero timer -->
+        <div class="hero_next_container"></div>
+        <!-- Next hero image -->
+        <div class="hero_container"></div>
+      </div>
+      <section id="trending" class="tending"></section>
+      <div id="genres_container"></div>
+      <button role="button" class="showMore" id="showMoreGenre">+ Show More</button>
+    </main>
+    <footer>
+      <form id="searchFormMobile" class="search_container_mobile">
+        <label for="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <input type="search" name="search" id="searchMobile" placeholder="Search">
+      </form>
+      <a href="https://www.themoviedb.org/" target="_blank">
+        <picture role="img">
+          <source media="(max-width:1023px)" srcset="./assets/images/movieDbLogo.svg">
+          <img src="./assets/images/mobile.svg" alt="The Movie DB Logo">
+        </picture>
+      </a>
+    </footer>
+  </div>
+</body>
+
+</html>

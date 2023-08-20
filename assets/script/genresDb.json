@@ -1,0 +1,124 @@
+{
+  "genres": [
+    {
+      "id": 28,
+      "name": "action",
+      "img": "./assets/images/action_poster.jpg",
+      "alt": "The Flash Poster"
+    },
+    {
+      "id": 12,
+      "name": "adventure",
+      "img": "./assets/images/adventure_poster.jpg",
+      "alt": "Arrival Poster"
+    },
+    {
+      "id": 16,
+      "name": "animation",
+      "img": "./assets/images/animation_poster.jpg",
+      "alt": "The Ice Age Adventure of Buck Wild Poster"
+    },
+    {
+      "id": 35,
+      "name": "comedy",
+      "img": "./assets/images/comedy_poster.jpg",
+      "alt": "Fun with Dick and Jane Poster"
+    },
+    {
+      "id": 80,
+      "name": "crime",
+      "img": "./assets/images/crime_poster.jpg",
+      "alt": "X Fast Poster"
+    },
+    {
+      "id": 99,
+      "name": "documentary",
+      "img": "./assets/images/documentary_poster.jpg",
+      "alt": "To End All War Oppenheimer & The Atomic Bomb Poster"
+    },
+    {
+      "id": 18,
+      "name": "drama",
+      "img": "./assets/images/drama_poster.jpg",
+      "alt": "Oppenheimer Poster"
+    },
+    {
+      "id": 10751,
+      "name": "family",
+      "img": "./assets/images/family_poster.jpg",
+      "alt": "Ladynug & CatNoir Poster"
+    },
+    {
+      "id": 14,
+      "name": "fantasy",
+      "img": "./assets/images/fantasy_poster.jpg",
+      "alt": "Indiana Jones and the dial of destiny Poster"
+    },
+    {
+      "id": 36,
+      "name": "history",
+      "img": "./assets/images/history_poster.jpg",
+      "alt": "The Woma King Poster"
+    },
+    {
+      "id": 27,
+      "name": "horor",
+      "img": "./assets/images/horor_poster.jpg",
+      "alt": "Residental Evil Death Island Poster"
+    },
+    {
+      "id": 10402,
+      "name": "music",
+      "img": "./assets/images//musik_poster.jpg",
+      "alt": "Coco Poster"
+    },
+    {
+      "id": 9648,
+      "name": "mystery",
+      "img": "./assets/images/mystery_poster.jpg",
+      "alt": "The Conjuring the Devil Made Me DO It Poster"
+    },
+    {
+      "id": 10749,
+      "name": "romance",
+      "img": "./assets/images/romance_poster.jpg",
+      "alt": "My Fault Poster"
+    },
+    {
+      "id": 878,
+      "name": "science fiction",
+      "img": "./assets/images/science_fiction_poster.jpg",
+      "alt": "Transformers Rise Of The Beasts Poster"
+    },
+    {
+      "id": 10770,
+      "name": "tv movie",
+      "img": "./assets/images/tv_movie_poster.jpg",
+      "alt": "We Bare Bears The Movie Poster"
+    },
+    {
+      "id": 53,
+      "name": "thriller",
+      "img": "./assets/images/thriller_poster.jpg",
+      "alt": "John Wick Chapter 4 Poster"
+    },
+    {
+      "id": 10752,
+      "name": "war",
+      "img": "./assets/images/war_poster.jpg",
+      "alt": "Creation of the Gods 1: Kingdom Of Storms Poster"
+    },
+    {
+      "id": 37,
+      "name": "western",
+      "img": "./assets/images//western_poster.jpg",
+      "alt": "Django Unchained Poster"
+    },
+    {
+      "id": "trending",
+      "name": "trending",
+      "img": "./assets/images/action_poster.jpg",
+      "alt": "The Trendig Poster"
+    }
+  ]
+}
