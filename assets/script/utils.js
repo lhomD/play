@@ -2,8 +2,7 @@ export { checkImgStatus, XHRequest, runTime, checkScreenSize };
 
 const baseUrl = "https://api.themoviedb.org/3/"; //Movie DB Base Url
 const imageUrl = "https://image.tmdb.org/t/p/w1280"; //Url to the image
-/* Media Query */
-const mediaQuery = window.matchMedia("(max-width: 1023px)");
+const mediaQuery = window.matchMedia("(max-width: 1023px)"); //Media Query
 
 /* Function to check if image exist */
 function checkImgStatus(arg) {

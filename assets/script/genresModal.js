@@ -1,9 +1,11 @@
 export { genresInit };
 let genresDB; /* Some of the may be temporary if it makes changes on modal js */
-let counter = 0;
+let counter = 0; /* Counter for slider on genres modal */
 let genresContainer;
+
 let documentBody = document.querySelector("body");
 const showModalWindow = document.getElementById("modal");
+
 /* Function to show genres modal */
 function genresInit() {
   let menuBtns = document.querySelectorAll("nav a");
@@ -11,6 +13,7 @@ function genresInit() {
     menuBtn.addEventListener("click", showGenresModal);
   });
 } // End init
+
 /* Function to modal with genres */
 function showGenresModal(e) {
   e.preventDefault();
@@ -28,6 +31,7 @@ function showGenresModal(e) {
     hideGenres();
   }
 } //End showGenresModal
+
 /* Publishin genres to the modal */
 function showGenres() {
   showModalWindow.classList.add("genres");
@@ -72,6 +76,7 @@ function showGenres() {
   });
   publishGenres();
 } // End showGenres
+
 /* Publishing cards to the modal */
 async function publishGenres() {
   genresDB = await genresData();
@@ -86,12 +91,14 @@ async function publishGenres() {
     genresContainer.appendChild(singleGenre);
   });
 } //End publishGenres
+
 /* Function to hide genres modal */
 function hideGenres() {
   showModalWindow.classList.remove("genres");
   showModalWindow.innerHTML = "";
   documentBody.style.overflowY = "scroll";
 } // End hideGenres
+
 /* Function to scrill genres */
 function slideGenres() {
   genresContainer.scrollTo({
@@ -100,6 +107,7 @@ function slideGenres() {
     behavior: "smooth",
   });
 } // End slideGenres
+
 /* Request genres */
 async function genresData() {
   const response = await axios.get("../assets/script/genresDb.json");

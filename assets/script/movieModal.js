@@ -7,17 +7,13 @@ let movieRespons; //Saving movie data
 let cast; //Saving data about actres
 let reviews; //Saving riviews
 let actingActers = []; //picking up actres with images
+
 let documentBody = document.querySelector("body");
 const showModalWindow = document.getElementById("modal");
+/* Function runs while modal is shown */
 async function showMovieModal() {
-  showModalWindow.classList.add("active");
   documentBody.style.overflowY = "hidden";
-
-  /*  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  }); */
+  showModalWindow.classList.add("active");
 
   let movieId = this.getAttribute("data-id"); //Get movie Id
 
@@ -36,8 +32,10 @@ async function showMovieModal() {
   reviews = await Utils.XHRequest(
     "movie/" + movieId + "/reviews?language=en-US&" + apiKey
   );
+
   publushMovie();
 } // End showModal
+
 /* Function to get and publish movie */
 async function publushMovie() {
   let modalContainer = document.createElement("div");
@@ -105,9 +103,10 @@ async function publushMovie() {
     documentBody.style.overflowY = "scroll";
     showModalWindow.innerHTML = "";
   });
-  //--------------------------------------------------//
+
   sortingCastPersons();
 } //End publishMovie
+
 /* Check genres and return name */
 function getGenres(genresArr) {
   let genres = "";
@@ -121,6 +120,7 @@ function getGenres(genresArr) {
     return genres;
   }
 } //End getGenres
+
 /* Directed by. Find */
 function directedBy() {
   let directorName;
@@ -135,6 +135,7 @@ function directedBy() {
     }
   }
 } // End directedBy
+
 /* Find img of director */
 function directedByImg() {
   let profileImage;
@@ -150,6 +151,7 @@ function directedByImg() {
     }
   }
 } // End directedByImg
+
 /* Publish other actreses */
 function sortingCastPersons() {
   let overviewContainer = document.querySelector(
@@ -174,6 +176,7 @@ function sortingCastPersons() {
     publishActers();
   }
 } // End sortingCastPersons
+
 /* Publishin Acters to the modal */
 function publishActers() {
   let moreCast = document.getElementById("moreCast"); //Referens to the button to show more actres
@@ -217,12 +220,14 @@ function publishActers() {
     publishMedia();
   }
 } //End publishActers
+
 /* Get  Trailer of Movie*/
 function publishMedia() {
   let overviewContainer = document.querySelector(
     ".modal_container_hero_overview"
   );
   let movieTrailer = movieRespons.videos.results;
+
   if (movieTrailer.length > 0) {
     let mediaContainer = document.createElement("div");
     mediaContainer.classList.add("modal_container_hero_overview_media");
@@ -241,6 +246,7 @@ function publishMedia() {
       }
     }
     overviewContainer.appendChild(mediaContainer);
+
     publishReviews();
     return;
   } else {
@@ -248,6 +254,7 @@ function publishMedia() {
     return;
   }
 } // End publishMedia
+
 /* Get reviews of movie */
 function publishReviews() {
   let overviewContainer = document.querySelector(
@@ -299,4 +306,4 @@ function publishReviews() {
     `;
     reviewContent.appendChild(singleReview);
   }
-}
+} //End publishReviews

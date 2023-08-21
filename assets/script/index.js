@@ -6,8 +6,8 @@ import { serachInit } from "./searchModal.js";
 const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
 
 let genresDB; /* Get all genres from server before running functions */
-
 let condition;
+
 /* Variabels and const */
 let movieData; /* Reference to the trending movies */
 let slideHeroNum; /* Referens to the var to translate slider*/
@@ -22,7 +22,6 @@ async function init() {
   let showMoreGenre =
     document.getElementById("showMoreGenre"); /* Show More Genre Btn */
   showMoreGenre.addEventListener("click", publushGenres);
-  /* ------------------------------------------ */
   serachInit();
   genresInit();
   heroSlider();
@@ -127,7 +126,6 @@ function heroTimerBtns() {
     btnsContainer.appendChild(timerBtn);
   }
   activeHeroBtn = document.querySelectorAll(".hero_next_container_timer");
-  /* ------------------------------------------ */
   changeHero();
   publishTrending();
 } //End timerBtns
@@ -141,7 +139,6 @@ function publishTrending() {
       <i class="fa-solid fa-chevron-right"></i></a>
     <div class="trending_container"></div>
     `;
-  /* ------------------------------------------ */
   showTrendingMovies();
 } //publishTrending
 
@@ -193,7 +190,6 @@ function showTrendingMovies() {
       `;
     trendingContainer.appendChild(trendingMovie);
   }
-  /* ------------------------------------------ */
   publushGenres();
 } //End trending movies
 
@@ -220,7 +216,7 @@ function publushGenres() {
       <div class="genre_container"></div>
       `;
   genresContainer.appendChild(genreSection);
-  /* ------------------------------------------ */
+
   getGenresContent(genresDB[randomGenre].id);
   genresDB.splice(randomGenre, 1);
 } //End publushGenres
@@ -263,7 +259,7 @@ async function getGenresContent(genre) {
         </div>`;
     genreContainer[genreContainer.length - 1].appendChild(genresContent);
   }
-  /* ------------------------------------------ */
+
   activeModal();
 } //End getGenresContent
 

@@ -4,9 +4,9 @@ import { serachInit } from "./searchModal.js";
 import { genresInit } from "./genresModal.js";
 
 let genresDB; /* Get all genres from server before running functions */
-let getGenresData;
-let genreresArr = [];
-let trendingData; /* Save trending movies */
+let getGenresData; /* Save genres data */
+let genreresArr = []; /* Save part of genres data */
+let trendingData; /* Save trending data */
 let heroData; /* Save actual genre movies */
 
 const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
@@ -14,17 +14,15 @@ let pageNr = 1; /* Page numbers to API Call */
 
 /* Initialize */
 async function init() {
-  let genreFromUrl = decodeURIComponent(
-    window.location.search.substring(1)
-  ); /*Query on Url adress  */
+  /*Query on Url adress  */
+  let genreFromUrl = decodeURIComponent(window.location.search.substring(1));
+
   genresDB = await genresData();
-
   heroData = genresDB.find((genre) => genre.name === genreFromUrl);
-
   trendingData = await Utils.XHRequest(
     "trending/movie/day?language=en-US&" + apiKey
   );
-
+  /* Check url to determine what to show on page */
   if (genreFromUrl == "" || heroData === undefined) {
     wrongGenre();
   } else if (genreFromUrl == "trending") {
@@ -85,7 +83,6 @@ function createHeroSection() {
       <p class="hero_text-counter">${getGenresData.total_results} movies</p>
   </div>
   `;
-  /* ------------------------------------------ */
   publishTrending();
 } //End createHeroSection
 
@@ -96,7 +93,6 @@ function publishTrending() {
     <h2 class="tending-header">Trending Now</h2>
     <div class="trending_container"></div>
     `;
-  /* ------------------------------------------ */
   showTrendingMovies();
 } //End publishTrending
 /* Trending Movies Function */
@@ -228,6 +224,7 @@ async function genresData() {
   const response = await axios.get("../assets/script/genresDb.json");
   return response.data.genres;
 } //End genresData
+
 /* Get genres from ids */
 function getGenres(genres) {
   let allGenres = "";
