@@ -1,5 +1,5 @@
 import * as Utils from "./utils.js";
-/* import { showMovieModal } from "../assets/script/movieModal.js"; */
+import { showMovieModal } from "./movieModal.js";
 import { serachInit } from "./searchModal.js";
 import { genresInit } from "./genresModal.js";
 
@@ -47,6 +47,7 @@ async function init() {
   genresInit();
 } //End init
 window.addEventListener("load", init);
+
 /* Function to handle if user writes wrong genre */
 function wrongGenre() {
   let mainDocument = document.querySelector("main");
@@ -60,6 +61,7 @@ function wrongGenre() {
   `;
   publishGenresLinks();
 } // End wrongGenre
+
 /* Function to create genres link */
 function publishGenresLinks() {
   let linksContainer = document.querySelector(".empty_genre_links");
@@ -70,6 +72,7 @@ function publishGenresLinks() {
     linksContainer.appendChild(singleGenre);
   });
 } //End publishLinks
+
 /* Create hero section function */
 function createHeroSection() {
   let getHeroSection = document.querySelector(".hero");
@@ -85,6 +88,7 @@ function createHeroSection() {
   /* ------------------------------------------ */
   publishTrending();
 } //End createHeroSection
+
 /* Create Trending Movies Function */
 function publishTrending() {
   let trending = document.getElementById("trending");
@@ -96,6 +100,7 @@ function publishTrending() {
   showTrendingMovies();
 } //End publishTrending
 /* Trending Movies Function */
+
 function showTrendingMovies() {
   let trendingContainer = document.querySelector(".trending_container");
 
@@ -145,7 +150,8 @@ function showTrendingMovies() {
   }
   createGenresSection();
 } //End trending movies
-/*Create genres section  */
+
+/* Create genres section */
 function createGenresSection() {
   let genres = document.getElementById("genres");
   genres.innerHTML = `
@@ -154,6 +160,7 @@ function createGenresSection() {
     `;
   createGenresArr();
 } //End createGenresSection
+
 /* Function to create new array with 10 movies */
 async function createGenresArr() {
   genreresArr = [];
@@ -173,6 +180,7 @@ async function createGenresArr() {
   }
   publishGenresSection();
 } // End createGenresArr
+
 /* Publish genres on the page */
 function publishGenresSection() {
   let genresContainer = document.querySelector(".genre_container");
@@ -212,7 +220,9 @@ function publishGenresSection() {
   let showMoreGenre =
     document.getElementById("showMoreGenre"); /* Show More Genre Btn */
   showMoreGenre.addEventListener("click", createGenresArr);
+  activeModal();
 } //End publishGenresSection
+
 /* Request genres */
 async function genresData() {
   const response = await axios.get("../assets/script/genresDb.json");
@@ -232,3 +242,11 @@ function getGenres(genres) {
   }
   return allGenres;
 } //End getGenre
+
+/* Adding click function to every movie */
+function activeModal() {
+  let clickedMovie = document.querySelectorAll(".showMovieInfo");
+  clickedMovie.forEach((btn) => {
+    btn.addEventListener("click", showMovieModal);
+  });
+} // End activeModal

@@ -60,7 +60,7 @@ function showGenres() {
 
   let slideRight = document.getElementById("scrollRight");
   slideRight.addEventListener("click", () => {
-    if (counter === 7) {
+    if (counter === 8) {
       slideRight.disabled = true;
       return;
     } else {
@@ -78,7 +78,7 @@ async function publishGenres() {
   genresContainer = document.querySelector(".genres_container_cards");
   genresDB.forEach((genre) => {
     let singleGenre = document.createElement("a");
-    singleGenre.href = "./genres/?" + genre.name;
+    singleGenre.href = "../genres/?" + genre.name;
     singleGenre.innerHTML = `
       <img src=".${genre.img}" alt="${genre.alt}">
       <h3 class="genres_container_cards-titel">${genre.name}</h3>

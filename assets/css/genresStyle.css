@@ -4,6 +4,7 @@
 @import url("./genreMoviesStyle.css");
 @import url("./searchModalStyle.css");
 @import url("./genresModalStyle.css");
+@import url("./movieModalStyle.css");
 
 /* Hero Section */
 .hero {
