@@ -90,15 +90,10 @@
 .header_container_links a .fa-solid {
   margin-left: 0.8rem;
   font-size: 1.2rem;
+  transition: transform ease-in 300ms;
 }
 .header_container_links .active .fa-chevron-down {
-  display: none;
-}
-.header_container_links .fa-chevron-up {
-  display: none;
-}
-.header_container_links .active .fa-chevron-up {
-  display: block;
+  transform: rotate(-180deg);
 }
 /* Mobile Search Field */
 .search_container_mobile {

@@ -25,7 +25,7 @@ async function init() {
   serachInit();
   genresInit();
   heroSlider();
-}
+} //End init
 window.addEventListener("load", init);
 //End init Function
 

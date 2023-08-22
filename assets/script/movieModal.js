@@ -143,7 +143,6 @@ function directedByImg() {
     profileImage = cast.crew.find(
       (person) => person.known_for_department === "Directing"
     );
-    console.log(profileImage.profile_path);
     if (!profileImage || profileImage.profile_path === null) {
       return "https://placehold.jp/3d4070/ffffff/300x300.png?text=Image%20Missing";
     } else {

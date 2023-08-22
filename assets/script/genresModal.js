@@ -6,6 +6,8 @@ let genresContainer;
 let documentBody = document.querySelector("body");
 const showModalWindow = document.getElementById("modal");
 
+let headerLinks;
+
 /* Function to show genres modal */
 function genresInit() {
   let menuBtns = document.querySelectorAll("nav a");

@@ -91,6 +91,8 @@ function publishTrending() {
   let trending = document.getElementById("trending");
   trending.innerHTML = `
     <h2 class="tending-header">Trending Now</h2>
+    <a role="link" href="./?trending" class="tending_more">Show More
+        <i class="fa-solid fa-chevron-right"></i></a>
     <div class="trending_container"></div>
     `;
   showTrendingMovies();
@@ -185,7 +187,7 @@ function publishGenresSection() {
     genreContent.classList.add("genre_container_content", "showMovieInfo");
     genreContent.setAttribute("data-id", genre.id);
     genreContent.innerHTML = `
-        <picture class="trending_container_content-image" role="img">
+        <picture class="genre_container_content-image" role="img">
           <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
             genre.poster_path
           )}">
