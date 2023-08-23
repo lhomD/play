@@ -34,6 +34,9 @@ body {
 .wrapper {
   width: 100%;
   background-color: var(--font-color-active);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 a {
   text-decoration: none;
@@ -57,7 +60,7 @@ a {
   font-weight: 400;
   line-height: normal;
   transition: all 300ms ease-in;
-  margin: 8rem auto 0;
+  margin: 8rem auto 12rem;
 }
 .showMore:hover {
   color: var(--secondary-color);
@@ -66,8 +69,8 @@ a {
 }
 footer {
   margin-top: auto;
+  padding-bottom: 12rem;
   text-align: center;
-  margin: 12rem auto;
 }
 footer img {
   width: 8em;

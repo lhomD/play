@@ -139,7 +139,7 @@
   .genre_container {
     padding-right: 0;
     padding-bottom: 0;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .genre_container_content {
     width: 30%;
@@ -162,4 +162,5 @@
     font-weight: 400;
     padding: 0.8rem 1.6rem;
   }
+  /* display: none; */
 }

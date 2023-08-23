@@ -1,0 +1,71 @@
+@import url("./cssSettings.css");
+@import url("./headerSectionStyle.css");
+@import url("./genreMoviesStyle.css");
+@import url("./searchModalStyle.css");
+@import url("./genresModalStyle.css");
+@import url("./movieModalStyle.css");
+
+.search_page {
+  width: 100%;
+  max-width: 132.8rem;
+  margin: 12.8rem auto 0;
+  font-size: 0;
+}
+.search_page_header {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.4rem;
+}
+.search_page_header span {
+  font-style: normal;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: linear-gradient(
+    90deg,
+    rgba(239, 239, 239, 0.3) 0%,
+    rgba(239, 239, 239, 0.08) 100%
+  );
+  box-shadow: 0px 0px 12px 0px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  padding: 0.4rem 1.6rem;
+}
+.genre_container {
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1350px) and (min-width: 1024px) {
+  .search {
+    padding: 0 2rem;
+  }
+  .genre_container {
+    justify-content: space-between;
+  }
+  .genre_container_content {
+    max-width: 30%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .search {
+    margin: 8.8rem auto 0;
+    padding: 0;
+    padding: 0 1.6rem;
+  }
+  .search_header {
+    gap: 1.2rem;
+  }
+  .search_header span:last-child {
+    display: none;
+  }
+  .genre_container {
+    padding-right: 0;
+    padding-bottom: 0;
+    justify-content: space-evenly;
+  }
+  .genre_container_content {
+    width: 30%;
+  }
+}

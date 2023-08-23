@@ -67,7 +67,7 @@
 }
 .genre_container_content picture img {
   width: 100%;
-  height: 100%;
+  height: 13.5rem;
   object-fit: cover;
   border-radius: 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.32);
@@ -139,6 +139,9 @@
   .genre_container_content::before {
     height: 17rem;
   }
+  .genre_container_content_info_titel .fa-chevron-right {
+    display: none;
+  }
 }
 @media screen and (max-width: 1023px) {
   .genre {
@@ -161,7 +164,7 @@
     line-height: 2rem;
   }
   .genre_more .fa-chevron-right {
-    display: block;
+    display: none;
   }
   .genre_container {
     overflow-x: scroll;
@@ -183,7 +186,6 @@
   .genre_container_content_info_score {
     position: absolute;
     top: 14.2rem;
-    display: block;
     margin-left: 1.2rem;
   }
   .genre_container_content_info-data {
@@ -194,7 +196,7 @@
     font-size: 1.2rem;
     margin-right: 0.4rem;
   }
-  .genre_container_content_info-total {
+  .genre_container_content_info_titel .fa-chevron-right {
     display: none;
   }
   .showMoreGenre {
