@@ -89,7 +89,10 @@ footer img {
 }
 @media screen and (max-width: 1023px) {
   .showMore {
-    margin: 4rem auto 0;
+    margin: 4rem auto 8rem;
+  }
+  footer {
+    padding-bottom: 12rem;
   }
   footer img {
     width: 16em;
