@@ -13,7 +13,6 @@
   overflow-y: scroll;
   background-color: var(--font-color-active);
   border-radius: 2.4rem 2.4rem 0 0;
-  padding-bottom: 19.2rem;
   position: relative;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -299,6 +298,14 @@
   font-weight: 400;
   line-height: 24px;
 }
+.logo {
+  margin-top: auto;
+  padding: 8rem 0 16rem;
+  text-align: center;
+}
+.logo img {
+  width: 8em;
+}
 @media screen and (max-width: 1350px) and (min-width: 1024px) {
   .modal {
     padding: 0 1.6rem;
@@ -307,6 +314,12 @@
     margin: 1.6rem auto;
     padding-bottom: 9.6rem;
   }
+  .logo {
+    padding: 8rem 0 4rem;
+  }
+  .logo img {
+    width: 16em;
+  }
 }
 @media screen and (max-width: 1023px) {
   .modal {
@@ -314,7 +327,6 @@
   }
   .modal_container {
     margin: 3.2rem auto 0;
-    padding-bottom: 9.6rem;
   }
   .modal_container_close {
     top: 2rem;
@@ -424,5 +436,11 @@
       rgba(239, 239, 239, 0) 100%
     );
     backdrop-filter: blur(27.5px);
+  }
+  .logo {
+    padding: 8rem 0 12rem;
+  }
+  .logo img {
+    width: 16em;
   }
 }

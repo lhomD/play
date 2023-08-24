@@ -38,7 +38,7 @@
   flex-wrap: wrap;
 }
 @media screen and (max-width: 1350px) and (min-width: 1024px) {
-  .search {
+  .search_page {
     padding: 0 2rem;
   }
   .genre_container {
@@ -49,7 +49,7 @@
   }
 }
 @media screen and (max-width: 1023px) {
-  .search {
+  .search_page {
     margin: 8.8rem auto 0;
     padding: 0;
     padding: 0 1.6rem;

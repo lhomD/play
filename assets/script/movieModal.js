@@ -2,7 +2,7 @@ export { showMovieModal };
 import * as Utils from "./utils.js";
 
 const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
-
+let modalContainer; //Modal container to publish movie
 let movieRespons; //Saving movie data
 let cast; //Saving data about actres
 let reviews; //Saving riviews
@@ -12,6 +12,8 @@ let documentBody = document.querySelector("body");
 const showModalWindow = document.getElementById("modal");
 /* Function runs while modal is shown */
 async function showMovieModal() {
+  modalContainer = document.createElement("div");
+  modalContainer.classList.add("modal_container");
   documentBody.style.overflowY = "hidden";
   showModalWindow.classList.add("active");
 
@@ -38,8 +40,6 @@ async function showMovieModal() {
 
 /* Function to get and publish movie */
 async function publushMovie() {
-  let modalContainer = document.createElement("div");
-  modalContainer.classList.add("modal_container");
   modalContainer.innerHTML = `
     <div id="closeModal" class="modal_container_close">
       <i class="fa-solid fa-xmark"></i>
@@ -269,7 +269,9 @@ function publishReviews() {
       <div class="modal_container_hero_overview_reviews_review"></div>
       `;
     overviewContainer.appendChild(reviewsContainer);
+    publishLogo();
   } else {
+    publishLogo();
     return;
   }
   let reviewContent = document.querySelector(
@@ -306,3 +308,17 @@ function publishReviews() {
     reviewContent.appendChild(singleReview);
   }
 } //End publishReviews
+
+/* Function to publish The Movie DB logo */
+function publishLogo() {
+  let movieDbLogo = document.createElement("div");
+  movieDbLogo.classList.add("logo");
+  movieDbLogo.innerHTML = `
+      <a href="https://www.themoviedb.org/" target="_blank">
+        <picture role="img">
+          <source media="(max-width:1350px)" srcset="../assets/images/movieDbLogo.svg">
+          <img src="../assets/images/mobile.svg" alt="The Movie DB Logo">
+        </picture>
+      </a>`;
+  modalContainer.appendChild(movieDbLogo);
+} //End publishLogo
