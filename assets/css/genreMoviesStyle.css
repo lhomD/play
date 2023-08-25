@@ -1,7 +1,7 @@
 .genre {
   width: 100%;
   max-width: 132.8rem;
-  margin: 8rem auto auto;
+  margin: auto;
 }
 
 .genre-header {
@@ -37,6 +37,7 @@
 .genre_container {
   display: flex;
   gap: 3.2rem;
+  margin-bottom: 8rem;
 }
 .genre_container_content {
   width: 100%;
@@ -171,6 +172,7 @@
     gap: 1.6rem;
     padding-bottom: 1rem;
     padding-right: 1rem;
+    margin-bottom: 4rem;
   }
   .genre_container_content::before {
     height: 17rem;

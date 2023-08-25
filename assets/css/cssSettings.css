@@ -60,7 +60,7 @@ a {
   font-weight: 400;
   line-height: normal;
   transition: all 300ms ease-in;
-  margin: 8rem auto 12rem;
+  margin: 0 auto 12rem;
 }
 .showMore:hover {
   color: var(--secondary-color);
@@ -89,7 +89,7 @@ footer img {
 }
 @media screen and (max-width: 1023px) {
   .showMore {
-    margin: 4rem auto 8rem;
+    margin: 0 auto 8rem;
   }
   footer {
     padding-bottom: 12rem;
