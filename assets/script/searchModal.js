@@ -40,5 +40,12 @@ function unFocuse() {
 
 /* On submit function */
 function onSubmit(searchTerm) {
-  console.log(searchTerm.value);
+  if (searchTerm == "" || !searchTerm) {
+    console.log("Do not exist")
+  } else {
+    window.location.href = "../search/?" + encodeURIComponent(searchTerm);
+    /* encodeURIComponent(searchTerm);
+    console.log(encodeURIComponent(searchTerm)) */
+
+  }
 } // End iónSubmit
