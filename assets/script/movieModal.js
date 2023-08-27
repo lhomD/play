@@ -21,10 +21,10 @@ async function showMovieModal() {
 
   movieRespons = await Utils.XHRequest(
     "movie/" +
-      movieId +
-      "?language=en-US&" +
-      apiKey +
-      "&append_to_response=videos"
+    movieId +
+    "?language=en-US&" +
+    apiKey +
+    "&append_to_response=videos"
   );
 
   cast = await Utils.XHRequest(
@@ -47,35 +47,31 @@ async function publushMovie() {
 
     <picture class="modal_container_img">
       <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
-        movieRespons.poster_path
-      )}">
-      <img src="${Utils.checkImgStatus(movieRespons.backdrop_path)}" alt="${
-    movieRespons.title
-  }">
+    movieRespons.poster_path
+  )}">
+      <img src="${Utils.checkImgStatus(movieRespons.backdrop_path)}" alt="${movieRespons.title
+    }">
     </picture>
 
     <div class="modal_container_hero">
       <span class="modal_container_hero_time">${Utils.runTime(
-        movieRespons.runtime
-      )}</span>
+      movieRespons.runtime
+    )}</span>
       <h2 class="modal_container_hero-title">${movieRespons.title}</h2>
       <div class="modal_container_hero_info">
         <div class="modal_container_hero_info_score">
           <i class="fa-solid fa-star"></i>
-          <span class="modal_container_hero_info-data">${
-            movieRespons.vote_average
-          }</span>
-          <span class="modal_container_hero_info-total">${
-            movieRespons.vote_count
-          }</span>
+          <span class="modal_container_hero_info-data">${movieRespons.vote_average
+    }</span>
+          <span class="modal_container_hero_info-total">${movieRespons.vote_count
+    }</span>
         </div>
         <div class="modal_container_hero_info_genre">
           <p class="modal_container_hero_info_genre-genres">${getGenres(
-            movieRespons.genres
-          )}</p>
-          <p class="modal_container_hero_info_genre-year">${
-            movieRespons.release_date
-          }</p>
+      movieRespons.genres
+    )}</p>
+          <p class="modal_container_hero_info_genre-year">${movieRespons.release_date
+    }</p>
         </div>
       </div>
     </div>
@@ -86,11 +82,11 @@ async function publushMovie() {
       <div class="modal_container_hero_overview_director">
         <span class="modal_container_hero_overview_director-position">Director:</span>
         <img src="${directedByImg(movieRespons.id)}" alt="${directedBy(
-    movieRespons.id
-  )}">
+      movieRespons.id
+    )}">
         <div class="modal_container_hero_overview_director-name">${directedBy(
-          movieRespons.id
-        )}</div>
+      movieRespons.id
+    )}</div>
       </div>
     </div>
     `;
@@ -110,10 +106,13 @@ async function publushMovie() {
 /* Check genres and return name */
 function getGenres(genresArr) {
   let genres = "";
-  if (genresArr.length <= 1) {
+  if (genresArr.length == 0) {
+    return genres;
+  } else if (genresArr.length <= 1) {
     genres += genresArr[0].name;
     return genres;
-  } else {
+  }
+  else {
     for (let i = 0; i < 2; i++) {
       genres += genresArr[i].name + (i === 1 ? "" : ", ");
     }
@@ -285,25 +284,21 @@ function publishReviews() {
     singleReview.innerHTML = `
       <div class="modal_container_hero_overview_reviews_review_profile_data">
         <img src="${Utils.checkImgStatus(
-          allReviews[i].author_details.avatar_path
-        )}" alt="${allReviews[i].author}">
-        <h4 class="modal_container_hero_overview_reviews_review_profile-name">${
-          allReviews[i].author
-        }</h4>
-        <p class="modal_container_hero_overview_reviews_review_profile-date">${
-          allReviews[i].created_at.split("T")[0]
-        }</p>
+      allReviews[i].author_details.avatar_path
+    )}" alt="${allReviews[i].author}">
+        <h4 class="modal_container_hero_overview_reviews_review_profile-name">${allReviews[i].author
+      }</h4>
+        <p class="modal_container_hero_overview_reviews_review_profile-date">${allReviews[i].created_at.split("T")[0]
+      }</p>
       </div>
         <span class="modal_container_hero_overview_reviews_review_profile-vote">
-          <i class="fa-solid fa-star"></i> ${
-            allReviews[i].author_details.rating
-              ? allReviews[i].author_details.rating
-              : 0
-          }/10
+          <i class="fa-solid fa-star"></i> ${allReviews[i].author_details.rating
+        ? allReviews[i].author_details.rating
+        : 0
+      }/10
         </span>
-        <p class="modal_container_hero_overview_reviews_review_profile-text">${
-          allReviews[i].content
-        }</p> 
+        <p class="modal_container_hero_overview_reviews_review_profile-text">${allReviews[i].content
+      }</p> 
     `;
     reviewContent.appendChild(singleReview);
   }
