@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find Movie Reviews">
-  <meta name="keywords"
-    content="action, adventure, animation, comedy, crime, documentary, drama, family, fantasy, history, horor, music, mystery, romance, science fiction, tv movie, thriller, war, western">
+  <meta name="description" content="Find ratings, information and trailer of the movies.">
+  <meta name="keywords" content="Movies, Reviews, Actors, Actresses, Photos, User Ratings,Trailers, Credits, Cast">
   <meta name="author" content="Ilhom Dadadjanov">
-
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <!--Meta tags OG  -->
   <meta property="og:site_name" content="play.it" />
   <meta property="og:title" content="Play | Search" />
@@ -38,7 +38,7 @@
         <img src="../assets/images/logotype.png" alt="Logo of play">
       </a>
       <form id="searchForm" class="header_container_search">
-        <label for="search">
+        <label for="searchDesktop">
           <i class="fa-solid fa-magnifying-glass"></i>
         </label>
         <input type="search" name="search" id="searchDesktop" placeholder="Search">
@@ -52,17 +52,17 @@
     </header>
     <main>
       <div id="search" class="search_page"></div>
-      <button role="button" class="showMore" id="showMoreMovie">+ Show More</button>
+      <button class="showMore" id="showMoreMovie">+ Show More</button>
     </main>
     <footer>
       <form id="searchFormMobile" class="search_container_mobile">
-        <label for="search">
+        <label for="searchMobile">
           <i class="fa-solid fa-magnifying-glass"></i>
         </label>
         <input type="search" name="search" id="searchMobile" placeholder="Search">
       </form>
       <a href="https://www.themoviedb.org/" target="_blank">
-        <picture role="img">
+        <picture>
           <source media="(max-width:1350px)" srcset="../assets/images/movieDbLogo.svg">
           <img src="../assets/images/mobile.svg" alt="The Movie DB Logo">
         </picture>
