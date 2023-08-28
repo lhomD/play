@@ -13,5 +13,10 @@ Thanks.
 
 Try on [Netlify.com](https://inspiring-marzipan-71aa51.netlify.app/)
 
+### Start Page
+
 ![Design preview for the Play Home Page](./assets/images/Home.png)
+
+### Genres Page
+
 ![Design preview for the Play Genres Page](./assets/images/Genres.png)
