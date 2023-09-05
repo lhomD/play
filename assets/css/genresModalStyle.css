@@ -3,6 +3,8 @@
   min-height: 100vh;
   position: fixed;
   z-index: 10;
+  -webkit-transform: translateY(-0%);
+  -ms-transform: translateY(-0%);
   transform: translateY(-0%);
   top: 0;
 }
@@ -20,16 +22,25 @@
   height: 5.6rem;
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.32);
+  background: -o-linear-gradient(
+    314deg,
+    rgba(239, 239, 239, 0.6) 0%,
+    rgba(239, 239, 239, 0.08) 100%
+  );
   background: linear-gradient(
     136deg,
     rgba(239, 239, 239, 0.6) 0%,
     rgba(239, 239, 239, 0.08) 100%
   );
+  -webkit-backdrop-filter: blur(27.5px);
   backdrop-filter: blur(27.5px);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
   color: var(--font-color);
   font-size: 2rem;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 10;
   cursor: pointer;
@@ -43,6 +54,8 @@
 
 .genres_container_cards {
   font-size: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 3.2rem;
   padding-bottom: 1.6rem;
@@ -58,6 +71,8 @@
   height: 48rem;
   border-radius: 1.2rem;
   overflow: hidden;
+  -webkit-transition: min-width 300ms ease-in;
+  -o-transition: min-width 300ms ease-in;
   transition: min-width 300ms ease-in;
 }
 
@@ -71,12 +86,21 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(hsla(0, 100%, 50%, 0)),
+    to(hsla(0, 0%, 0%, 0.3))
+  );
+  background: -o-linear-gradient(hsla(0, 100%, 50%, 0), hsla(0, 0%, 0%, 0.3));
   background: linear-gradient(hsla(0, 100%, 50%, 0), hsla(0, 0%, 0%, 0.3));
 }
 
 .genres_container_cards img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -102,6 +126,8 @@
     height: 38rem;
     border-radius: 1.2rem;
     overflow: hidden;
+    -webkit-transition: min-width 300ms ease-in;
+    -o-transition: min-width 300ms ease-in;
     transition: min-width 300ms ease-in;
   }
   .genres_container_cards {
@@ -126,6 +152,9 @@
     padding: 10rem 0;
   }
   .genres_container_cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 2.4rem;
     padding-bottom: 0rem;
@@ -136,6 +165,8 @@
     height: 14.8rem;
     border-radius: 1.2rem;
     overflow: hidden;
+    -webkit-transition: min-width 300ms ease-in;
+    -o-transition: min-width 300ms ease-in;
     transition: min-width 300ms ease-in;
   }
   .genres_container_cards-titel {
