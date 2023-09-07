@@ -45,30 +45,34 @@ async function heroSlider() {
     movieSlider.innerHTML = `
       <div class= "hero_container_sections_container" >
         <div class="hero_container_sections_container_info">
-          <h2 class="hero_container_sections_container_info-title">${movieData.results[i].title
-      }</h2>
+          <h2 class="hero_container_sections_container_info-title">${
+            movieData.results[i].title
+          }</h2>
           <div class="hero_container_sections_container_info_reviews">
             <div class="hero_container_sections_container_info_score">
               <i class="fa-solid fa-star"></i>
               <span class="hero_container_sections_container_info_score-data">${movieData.results[
-        i
-      ].vote_average.toFixed(1)}
+                i
+              ].vote_average.toFixed(1)}
               </span>
-              <span class="hero_container_sections_container_info_score-total">${movieData.results[i].vote_count
-      }
+              <span class="hero_container_sections_container_info_score-total">${
+                movieData.results[i].vote_count
+              }
               </span>
             </div>
             <p class="hero_container_sections_container_info-genres">${getGenres(
-        movieData.results[i].genre_ids
-      )}</p>
-            <p class="hero_container_sections_container_info-year">${movieData.results[i].release_date.split("-")[0]
-      }</p>
+              movieData.results[i].genre_ids
+            )}</p>
+            <p class="hero_container_sections_container_info-year">${
+              movieData.results[i].release_date.split("-")[0]
+            }</p>
           </div>
           <div class="hero_container_sections_container_info_btns">
-            <button role="button" role="button" data-id=${movieData.results[i].id
-      } class="hero_container_sections_containers_info-btns-trailer showMovieInfo" >
+            <button data-id=${
+              movieData.results[i].id
+            } class="hero_container_sections_containers_info-btns-trailer showMovieInfo" >
               <i class="fa-sharp fa-solid fa-play"></i>play trailer</button>
-            <button role="button" class="hero_container_sections_container_info-btns-next">
+            <button class="hero_container_sections_container_info-btns-next">
               <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
@@ -113,8 +117,8 @@ function heroTimerBtns() {
     timerBtn.addEventListener("click", nextSlide);
     timerBtn.innerHTML = `
       <img src="${Utils.checkImgStatus(
-      movieData.results[i].backdrop_path
-    )}" alt="${movieData.results[i].title}">
+        movieData.results[i].backdrop_path
+      )}" alt="${movieData.results[i].title}">
       <div class="hero_next_container-half"></div>
       <div class="hero_next_container-half"></div>
       <div class="hero_next_container-top"></div>
@@ -131,7 +135,7 @@ function publishTrending() {
   let trending = document.getElementById("trending");
   trending.innerHTML = `
     <h2 class="tending-header">Trending Now</h2>
-    <a role="link" href="./genres/?trending" class="tending_more">Show More
+    <a href="./genres/?trending" class="tending_more">Show More
       <i class="fa-solid fa-chevron-right"></i></a>
     <div class="trending_container"></div>
     `;
@@ -147,36 +151,40 @@ function showTrendingMovies() {
     trendingMovie.classList.add("trending_container_content", "showMovieInfo");
     trendingMovie.setAttribute("data-id", movieData.results[i + 5].id);
     trendingMovie.innerHTML = `
-        <picture class="trending_container_content-image" role="img">
+        <picture class="trending_container_content-image">
           <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
-      movieData.results[i + 5].poster_path
-    )}">
-          <img src="https://image.tmdb.org/t/p/w1280${i == 1
-        ? movieData.results[i + 5].poster_path
-        : movieData.results[i + 5].backdrop_path
-      }" alt="${movieData.results[i + 5].title}">
+            movieData.results[i + 5].poster_path
+          )}">
+          <img src="https://image.tmdb.org/t/p/w1280${
+            i == 1
+              ? movieData.results[i + 5].poster_path
+              : movieData.results[i + 5].backdrop_path
+          }" alt="${movieData.results[i + 5].title}">
         </picture>
         <div class="trending_container_content_info">
           <span class="trending_container_content_info-num">#0${i + 1}</span>
           <div class="trending_container_content_info_titel">
-            <h3 class="trending_container_content_info_titel-name">${movieData.results[i + 5].title
-      }</h3>
+            <h3 class="trending_container_content_info_titel-name">${
+              movieData.results[i + 5].title
+            }</h3>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
           <div class="trending_container_content_info_score">
             <i class="fa-solid fa-star"></i>
             <span class="trending_container_content_info-data">${movieData.results[
-        i + 5
-      ].vote_average.toFixed(1)}</span>
-            <span class="trending_container_content_info-total">${movieData.results[i + 5].vote_count
-      }</span>
+              i + 5
+            ].vote_average.toFixed(1)}</span>
+            <span class="trending_container_content_info-total">${
+              movieData.results[i + 5].vote_count
+            }</span>
           </div>
           <div class="trending_container_content_info_genre">
             <p class="trending_container_content_info_genre-genres">${getGenres(
-        movieData.results[i + 5].genre_ids
-      )}</p>
-            <p class="trending_container_content_info_genre-year">${movieData.results[i + 5].release_date.split("-")[0]
-      }</p>
+              movieData.results[i + 5].genre_ids
+            )}</p>
+            <p class="trending_container_content_info_genre-year">${
+              movieData.results[i + 5].release_date.split("-")[0]
+            }</p>
           </div>
         </div>
       `;
@@ -202,8 +210,8 @@ function publushGenres() {
   genreSection.innerHTML = `
       <h2 class="genre-header">${genresDB[randomGenre].name}</h2>
       <a href="./genres/?${encodeURIComponent(
-    genresDB[randomGenre].name
-  ).toLowerCase()}" class="genre_more" >Show More
+        genresDB[randomGenre].name
+      ).toLowerCase()}" class="genre_more" >Show More
       <i class="fa-solid fa-chevron-right"></i></a>
       <div class="genre_container"></div>
       `;
@@ -225,26 +233,29 @@ async function getGenresContent(genre) {
     genresContent.classList.add("genre_container_content", "showMovieInfo");
     genresContent.setAttribute("data-id", genresData.results[i].id);
     genresContent.innerHTML = ` 
-        <picture class="trending_container_content-image" role="img">
+        <picture class="trending_container_content-image">
           <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
-      genresData.results[i].poster_path
-    )}">
+            genresData.results[i].poster_path
+          )}">
           <img src="${Utils.checkImgStatus(
-      genresData.results[i].backdrop_path
-    )}" alt="${genresData.results[i].title}">
+            genresData.results[i].backdrop_path
+          )}" alt="${genresData.results[i].title}">
         </picture>
         <div class="genre_container_content_info">
           <div class="genre_container_content_info_titel">
-          <h3 class="genre_container_content_info_titel-name">${genresData.results[i].title
-      }</h3>
+          <h3 class="genre_container_content_info_titel-name">${
+            genresData.results[i].title
+          }</h3>
           <i class="fa-solid fa-chevron-right"></i>
         </div>
         <div class="genre_container_content_info_score">
           <i class="fa-solid fa-star"></i>
-          <span class="genre_container_content_info-data">${genresData.results[i].vote_average
-      }</span>
-          <span class="genre_container_content_info-total">${genresData.results[i].vote_count
-      }</span>
+          <span class="genre_container_content_info-data">${
+            genresData.results[i].vote_average
+          }</span>
+          <span class="genre_container_content_info-total">${
+            genresData.results[i].vote_count
+          }</span>
         </div>`;
     genreContainer[genreContainer.length - 1].appendChild(genresContent);
   }

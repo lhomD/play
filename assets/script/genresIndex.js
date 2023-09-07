@@ -33,11 +33,11 @@ async function init() {
   } else {
     getGenresData = await Utils.XHRequest(
       "discover/movie?" +
-      apiKey +
-      "&with_genres=" +
-      heroData.id +
-      "&page=" +
-      pageNr
+        apiKey +
+        "&with_genres=" +
+        heroData.id +
+        "&page=" +
+        pageNr
     );
     createHeroSection();
   }
@@ -91,7 +91,7 @@ function publishTrending() {
   let trending = document.getElementById("trending");
   trending.innerHTML = `
     <h2 class="tending-header">Trending Now</h2>
-    <a role="link" href="./?trending" class="tending_more">Show More
+    <a href="./?trending" class="tending_more">Show More
         <i class="fa-solid fa-chevron-right"></i></a>
     <div class="trending_container"></div>
     `;
@@ -107,36 +107,40 @@ function showTrendingMovies() {
     trendingMovie.classList.add("trending_container_content", "showMovieInfo");
     trendingMovie.setAttribute("data-id", trendingData.results[i].id);
     trendingMovie.innerHTML = `
-        <picture class="trending_container_content-image" role="img">
+        <picture class="trending_container_content-image">
           <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
-      trendingData.results[i].poster_path
-    )}">
-          <img src="https://image.tmdb.org/t/p/w1280${i == 1
-        ? trendingData.results[i].poster_path
-        : trendingData.results[i].backdrop_path
-      }" alt="${trendingData.results[i].title}">
+            trendingData.results[i].poster_path
+          )}">
+          <img src="https://image.tmdb.org/t/p/w1280${
+            i == 1
+              ? trendingData.results[i].poster_path
+              : trendingData.results[i].backdrop_path
+          }" alt="${trendingData.results[i].title}">
         </picture>
         <div class="trending_container_content_info">
           <span class="trending_container_content_info-num">#0${i + 1}</span>
           <div class="trending_container_content_info_titel">
-            <h3 class="trending_container_content_info_titel-name">${trendingData.results[i].title
-      }</h3>
+            <h3 class="trending_container_content_info_titel-name">${
+              trendingData.results[i].title
+            }</h3>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
           <div class="trending_container_content_info_score">
             <i class="fa-solid fa-star"></i>
             <span class="trending_container_content_info-data">${trendingData.results[
-        i
-      ].vote_average.toFixed(1)}</span>
-            <span class="trending_container_content_info-total">${trendingData.results[i + 5].vote_count
-      }</span>
+              i
+            ].vote_average.toFixed(1)}</span>
+            <span class="trending_container_content_info-total">${
+              trendingData.results[i + 5].vote_count
+            }</span>
           </div>
           <div class="trending_container_content_info_genre">
             <p class="trending_container_content_info_genre-genres">${getGenres(
-        trendingData.results[i].genre_ids
-      )}</p>
-            <p class="trending_container_content_info_genre-year">${trendingData.results[i].release_date.split("-")[0]
-      }</p>
+              trendingData.results[i].genre_ids
+            )}</p>
+            <p class="trending_container_content_info_genre-year">${
+              trendingData.results[i].release_date.split("-")[0]
+            }</p>
           </div>
         </div>
       `;
@@ -162,11 +166,11 @@ async function createGenresArr() {
     pageNr++;
     getGenresData = await Utils.XHRequest(
       "discover/movie?" +
-      apiKey +
-      "&with_genres=" +
-      heroData.id +
-      "&page=" +
-      pageNr
+        apiKey +
+        "&with_genres=" +
+        heroData.id +
+        "&page=" +
+        pageNr
     );
     genreresArr = getGenresData.results.splice(0, 10);
   } else {
@@ -183,25 +187,29 @@ function publishGenresSection() {
     genreContent.classList.add("genre_container_content", "showMovieInfo");
     genreContent.setAttribute("data-id", genre.id);
     genreContent.innerHTML = `
-        <picture class="genre_container_content-image" role="img">
+        <picture class="genre_container_content-image">
           <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
-      genre.poster_path
-    )}">
-          <img src="${Utils.checkImgStatus(genre.backdrop_path)}" alt="${genre.title
-      }">
+            genre.poster_path
+          )}">
+          <img src="${Utils.checkImgStatus(genre.backdrop_path)}" alt="${
+      genre.title
+    }">
         </picture>
         <div class="genre_container_content_info">
           <div class="genre_container_content_info_titel">
-            <h3 class="genre_container_content_info_titel-name">${genre.title
-      }</h3>
+            <h3 class="genre_container_content_info_titel-name">${
+              genre.title
+            }</h3>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
           <div class="genre_container_content_info_score">
             <i class="fa-solid fa-star"></i>
-            <span class="genre_container_content_info-data">${genre.vote_average
-      }</span>
-            <span class="genre_container_content_info-total">${genre.vote_count
-      }</span>
+            <span class="genre_container_content_info-data">${
+              genre.vote_average
+            }</span>
+            <span class="genre_container_content_info-total">${
+              genre.vote_count
+            }</span>
           </div>
         </div>
       `;
