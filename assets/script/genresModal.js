@@ -40,10 +40,10 @@ function showGenres() {
   /* Create an loop to go through genresDB */
   showModalWindow.innerHTML = `
     <div class="genres_container">
-      <button role="button" id="scrollLeft" class="genres_container_btn">
+      <button id="scrollLeft" class="genres_container_btn">
       <i class="fa-solid fa-arrow-left"></i>
       </button>
-      <button role="button" id="scrollRight" class="genres_container_btn" id="">
+      <button id="scrollRight" class="genres_container_btn" id="">
       <i class="fa-solid fa-arrow-right"></i>
       </button>
       <div class="genres_container_cards"></div>

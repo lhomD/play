@@ -74,7 +74,7 @@ function publishMovies() {
     genreContent.classList.add("genre_container_content", "showMovieInfo");
     genreContent.setAttribute("data-id", movie.id);
     genreContent.innerHTML = `
-        <picture class="genre_container_content-image" role="img">
+        <picture class="genre_container_content-image">
           <source media="(max-width:1023px)" srcset="${Utils.checkImgStatus(
             movie.poster_path
           )}">
