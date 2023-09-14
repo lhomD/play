@@ -15,7 +15,7 @@ async function showMovieModal() {
   modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   documentBody.style.overflowY = "hidden";
-  showModalWindow.classList.add("active");
+  showModalWindow.classList.add("activeModal");
 
   let movieId = this.getAttribute("data-id"); //Get movie Id
 
@@ -62,9 +62,9 @@ async function publushMovie() {
       <div class="modal_container_hero_info">
         <div class="modal_container_hero_info_score">
           <i class="fa-solid fa-star"></i>
-          <span class="modal_container_hero_info-data">${
-            movieRespons.vote_average
-          }</span>
+          <span class="modal_container_hero_info-data">${movieRespons.vote_average.toFixed(
+            1
+          )}</span>
           <span class="modal_container_hero_info-total">${
             movieRespons.vote_count
           }</span>
@@ -99,7 +99,7 @@ async function publushMovie() {
   let closeModal = document.getElementById("closeModal");
 
   closeModal.addEventListener("click", () => {
-    showModalWindow.classList.remove("active");
+    showModalWindow.classList.remove("activeModal");
     documentBody.style.overflowY = "scroll";
     showModalWindow.innerHTML = "";
   });
