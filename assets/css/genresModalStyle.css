@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   position: fixed;
-  z-index: 10;
+  z-index: 19;
   -webkit-transform: translateY(-0%);
   -ms-transform: translateY(-0%);
   transform: translateY(-0%);

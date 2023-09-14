@@ -41,7 +41,7 @@
   -webkit-box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.25);
   box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.25);
   border-radius: 28px;
-  z-index: 10;
+  z-index: 19;
 }
 /* Logo */
 .header img {
@@ -174,7 +174,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(27.5px);
   backdrop-filter: blur(27.5px);
-  z-index: 9;
+  z-index: 19;
 }
 .search_container_mobile label {
   font-size: 2.4rem;

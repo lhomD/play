@@ -15,7 +15,7 @@ async function showMovieModal() {
   modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   documentBody.style.overflowY = "hidden";
-  showModalWindow.classList.add("active");
+  showModalWindow.classList.add("activeModal");
 
   let movieId = this.getAttribute("data-id"); //Get movie Id
 
@@ -99,7 +99,7 @@ async function publushMovie() {
   let closeModal = document.getElementById("closeModal");
 
   closeModal.addEventListener("click", () => {
-    showModalWindow.classList.remove("active");
+    showModalWindow.classList.remove("activeModal");
     documentBody.style.overflowY = "scroll";
     showModalWindow.innerHTML = "";
   });
