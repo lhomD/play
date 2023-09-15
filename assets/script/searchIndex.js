@@ -91,9 +91,9 @@ function publishMovies() {
           </div>
           <div class="genre_container_content_info_score">
             <i class="fa-solid fa-star"></i>
-            <span class="genre_container_content_info-data">${
-              movie.vote_average
-            }</span>
+            <span class="genre_container_content_info-data">${movie.vote_average.toFixed(
+              1
+            )}</span>
             <span class="genre_container_content_info-total">${
               movie.vote_count
             }</span>
