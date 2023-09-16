@@ -1,7 +1,7 @@
 export { showMovieModal };
 import * as Utils from "./utils.js";
+import MOVIE_DB_API_KEY from "./apiKey.js"; //API Key
 
-const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
 let modalContainer; //Modal container to publish movie
 let movieRespons; //Saving movie data
 let cast; //Saving data about actres
@@ -23,16 +23,16 @@ async function showMovieModal() {
     "movie/" +
       movieId +
       "?language=en-US&" +
-      apiKey +
+      MOVIE_DB_API_KEY +
       "&append_to_response=videos"
   );
 
   cast = await Utils.XHRequest(
-    "movie/" + movieId + "/credits?language=en-US&" + apiKey
+    "movie/" + movieId + "/credits?language=en-US&" + MOVIE_DB_API_KEY
   );
 
   reviews = await Utils.XHRequest(
-    "movie/" + movieId + "/reviews?language=en-US&" + apiKey
+    "movie/" + movieId + "/reviews?language=en-US&" + MOVIE_DB_API_KEY
   );
 
   publushMovie();

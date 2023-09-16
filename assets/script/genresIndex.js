@@ -2,14 +2,13 @@ import * as Utils from "./utils.js";
 import { showMovieModal } from "./movieModal.js";
 import { serachInit } from "./searchModal.js";
 import { genresInit } from "./genresModal.js";
+import MOVIE_DB_API_KEY from "./apiKey.js"; //API Key
 
 let genresDB; /* Get all genres from server before running functions */
 let getGenresData; /* Save genres data */
 let genreresArr = []; /* Save part of genres data */
 let trendingData; /* Save trending data */
 let heroData; /* Save actual genre movies */
-
-const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
 let pageNr = 1; /* Page numbers to API Call */
 
 /* Initialize */
@@ -20,20 +19,23 @@ async function init() {
   genresDB = await genresData();
   heroData = genresDB.find((genre) => genre.name === genreFromUrl);
   trendingData = await Utils.XHRequest(
-    "trending/movie/day?language=en-US&" + apiKey
+    "trending/movie/day?language=en-US&" + MOVIE_DB_API_KEY
   );
   /* Check url to determine what to show on page */
   if (genreFromUrl == "" || heroData === undefined) {
     wrongGenre();
   } else if (genreFromUrl == "trending") {
     getGenresData = await Utils.XHRequest(
-      "trending/movie/day?language=en-US&" + apiKey + "&page=" + pageNr
+      "trending/movie/day?language=en-US&" +
+        MOVIE_DB_API_KEY +
+        "&page=" +
+        pageNr
     );
     createHeroSection();
   } else {
     getGenresData = await Utils.XHRequest(
       "discover/movie?" +
-        apiKey +
+        MOVIE_DB_API_KEY +
         "&with_genres=" +
         heroData.id +
         "&page=" +
@@ -166,7 +168,7 @@ async function createGenresArr() {
     pageNr++;
     getGenresData = await Utils.XHRequest(
       "discover/movie?" +
-        apiKey +
+        MOVIE_DB_API_KEY +
         "&with_genres=" +
         heroData.id +
         "&page=" +

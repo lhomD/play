@@ -2,8 +2,7 @@ import * as Utils from "./utils.js";
 import { showMovieModal } from "./movieModal.js";
 import { genresInit } from "./genresModal.js";
 import { serachInit } from "./searchModal.js";
-
-const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
+import MOVIE_DB_API_KEY from "./apiKey.js"; //API Key
 
 let genresDB; /* Get all genres from server before running functions */
 let condition;
@@ -32,7 +31,7 @@ window.addEventListener("load", init);
 /* Create slider on hero section */
 async function heroSlider() {
   movieData = await Utils.XHRequest(
-    "trending/movie/day?language=en-US&" + apiKey
+    "trending/movie/day?language=en-US&" + MOVIE_DB_API_KEY
   );
 
   let sliderContainer = document.querySelector(".hero_container");
@@ -226,7 +225,7 @@ async function getGenresContent(genre) {
   let genresUrl = "discover/movie?with_genres=" + genre + "&";
   let genreContainer = document.querySelectorAll(".genre_container");
 
-  let genresData = await Utils.XHRequest(genresUrl + apiKey);
+  let genresData = await Utils.XHRequest(genresUrl + MOVIE_DB_API_KEY);
 
   for (let i = 0; i < 5; i++) {
     let genresContent = document.createElement("div");
