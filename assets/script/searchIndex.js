@@ -2,8 +2,8 @@ import * as Utils from "./utils.js";
 import { showMovieModal } from "./movieModal.js";
 import { serachInit } from "./searchModal.js";
 import { genresInit } from "./genresModal.js";
+import MOVIE_DB_API_KEY from "./apiKey.js"; //API Key
 
-const apiKey = "api_key=cebaa0500440eb0f48f42d229a57cc8b"; //API Key
 let pageNr = 1; /* Page numbers to API Call */
 let searchTerm; /* Search term from URL */
 let searchResult; /* Save movies */
@@ -15,7 +15,9 @@ async function init() {
   searchResult = await Utils.XHRequest(
     "search/movie?query=" +
       searchTerm +
-      "&api_key=cebaa0500440eb0f48f42d229a57cc8b&page=" +
+      "&" +
+      MOVIE_DB_API_KEY +
+      "&page=" +
       pageNr
   );
 
@@ -44,7 +46,7 @@ function searchHeader() {
       <p>Searched for: </p>
       <span>${searchTerm}</span>
       <span>${searchResult.total_results} movies</span>
-      <span>${searchResult.total_pages} pages</span>
+      <span>${searchResult.total_pages * 2 - 1} pages</span>
     </div>
     <div class="genre_container"></div>`;
   createMovieArr();
@@ -57,7 +59,9 @@ async function createMovieArr() {
     searchResult = await Utils.XHRequest(
       "search/movie?query=" +
         searchTerm +
-        "&api_key=cebaa0500440eb0f48f42d229a57cc8b&page=" +
+        "&" +
+        MOVIE_DB_API_KEY +
+        "&page=" +
         pageNr
     );
     movieArr = searchResult.results.splice(0, 10);
