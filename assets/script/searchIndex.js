@@ -44,7 +44,7 @@ function searchHeader() {
       <p>Searched for: </p>
       <span>${searchTerm}</span>
       <span>${searchResult.total_results} movies</span>
-      <span>${searchResult.total_pages} pages</span>
+      <span>${searchResult.total_pages * 2 - 1} pages</span>
     </div>
     <div class="genre_container"></div>`;
   createMovieArr();
