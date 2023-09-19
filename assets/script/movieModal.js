@@ -104,7 +104,13 @@ async function publushMovie() {
     showModalWindow.innerHTML = "";
   });
 
-  sortingCastPersons();
+  if (cast.cast.length) {
+    sortingCastPersons();
+  } else if (movieRespons.videos.results) {
+    publishMedia();
+  } else {
+    publishReviews();
+  }
 } //End publishMovie
 
 /* Check genres and return name */
