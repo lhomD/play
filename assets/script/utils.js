@@ -7,7 +7,6 @@ const mediaQuery = window.matchMedia("(max-width: 1023px)"); //Media Query
 /* Function to check if image exist */
 function checkImgStatus(arg) {
   if (arg === null) {
-    /* console.log("Equal to null") */
     return "https://placehold.jp/3d4070/ffffff/300x300.png?text=Image%20Missing";
   } else if (arg.includes("http") || arg.includes("https")) {
     return "https://placehold.jp/3d4070/ffffff/300x300.png?text=Image%20Missing";
